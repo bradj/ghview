@@ -5,9 +5,9 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from halo import Halo
 import sys
 
-import config
-from github import get_repos, get_prs
-from repo import Repo
+from ghview import config
+from ghview.github import get_repos, get_prs
+from ghview.repo import Repo
 
 
 def print_stars(repos, top_n):
@@ -44,7 +44,7 @@ def print_contrib(repos, top_n):
 @click.option('--username', envvar='GHVIEW_USERNAME', help='GitHub username')
 @click.option('--pat', envvar='GHVIEW_PAT', help='GitHub personal access token')
 @click.version_option(version='0.1.0')
-def parse(organization, top_n, username, pat):
+def run(organization, top_n, username, pat):
     """                                      
   Welcome to GHView, a CLI for GitHub Organizations.
 
@@ -98,4 +98,4 @@ def parse(organization, top_n, username, pat):
 
 
 if __name__ == '__main__':
-    parse()
+    run()

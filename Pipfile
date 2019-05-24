@@ -9,9 +9,11 @@ verify_ssl = true
 click = "*"
 requests = "*"
 halo = "*"
+pytest = "*"
 
 [requires]
 python_version = "3.7"
 
 [scripts]
-org = "python ghview/main.py"
+org = "python ghview/cli.py"
+test = "pytest ghview/test"
