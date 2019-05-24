@@ -4,7 +4,7 @@ import requests
 import sys
 import traceback
 
-from config import repos_url, org_url
+from ghview.config import repos_url, org_url
 
 
 def next_page(link_header):

@@ -16,11 +16,11 @@ class Repo(object):
 
     @property
     def contrib(self):
-        if self.pr_count > self.forks:
-            return 100
-
-        if self.pr_count == 0:
+        if self.pr_count <= 0:
             return 0
+
+        if self.forks <= 0:
+            return 100
 
         return self.pr_count / self.forks * 100
 
